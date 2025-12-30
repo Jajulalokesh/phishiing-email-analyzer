@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phishing Email Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🛡 Welcome to Phishing Email Analyzer</h1>
+    <p class="subtitle">Email Security • Authentication • Malware Scanning</p>
+
+    <!-- MAIN MENU -->
+    <div id="menu" class="grid">
+        <div class="card" onclick="showSection('email')">
+            <h2>📧 Email Analyzer</h2>
+            <p>Analyze sender, subject & body for phishing indicators</p>
+        </div>
+
+        <div class="card" onclick="showSection('file')">
+            <h2>🦠 File Scanner</h2>
+            <p>Scan files for potential threats</p>
+        </div>
+    </div>
+
+    <!-- EMAIL ANALYZER -->
+    <div id="email" class="section">
+        <h2>📧 Email Analyzer</h2>
+
+        <label>From Address*</label>
+        <input id="from" type="email" placeholder="example@domain.com">
+
+        <label>Reply-To Address</label>
+        <input id="reply" type="email" placeholder="example@domain.com">
+
+        <label>Subject*</label>
+        <input id="subject">
+
+        <label>Email Body*</label>
+        <textarea id="body"></textarea>
+
+        <label>Email Headers (Optional)</label>
+        <textarea id="headers" placeholder="Paste full email headers here..."></textarea>
+
+        <button id="analyzeBtn">Analyze Email</button>
+        <div id="emailResult" class="results"></div>
+        <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <!-- FILE SCANNER -->
+    <div id="file" class="section scan-section">
+        <input type="file" id="fileInput">
+        <button onclick="startScan()">Scan File</button>
+
+        <!-- Scanning Animation -->
+        <div id="scanningBox" class="hidden">
+            <img src="file-scan.png" alt="Scanning..." class="scan-gif">
+            <p>Scanning file for threats...</p>
+        </div>
+
+        <!-- Result -->
+        <div id="scanResult" class="result-box"></div>
+        <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <!-- Footer -->
+
+</div>
+<footer>
+        &copy; Jajula Lokesh
+    </footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
